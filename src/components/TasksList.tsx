@@ -91,6 +91,7 @@ const TasksList: React.FC<TasksListProps> = ({
     openModal(
       <TaskPreviewModalContent
         task={task}
+        activeGroupName={activeGroup?.name ?? ''}
         onUpdate={(updatedTask) => handleUpdateTask(task.id, updatedTask)}
         handleDeleteTask={handleDeleteTask}
       />

@@ -7,6 +7,7 @@ import Task from '../../types/Task';
 
 interface TaskPreviewModalProps {
   task: Task;
+  activeGroupName: string;
   onUpdate: (updatedTask: Task) => void;
   handleDeleteTask: (taskId: string) => void;
 }
@@ -15,6 +16,7 @@ const TaskPreviewModal: React.FC<TaskPreviewModalProps> = ({
   task,
   onUpdate,
   handleDeleteTask,
+  activeGroupName,
 }) => {
   const [taskState, setTaskState] = useState<Task>(task);
   const [confiramtionModalOpen, setConfirmModalIsOpen] = useState(false);
@@ -83,7 +85,7 @@ const TaskPreviewModal: React.FC<TaskPreviewModalProps> = ({
       ref={modalRef}
     >
       <div className="flex justify-between">
-        <span className="text-accent">My List</span>
+        <span className="text-accent">{activeGroupName}</span>
         <div className="flex items-center justify-center gap-3 h-6">
           <button
             onClick={handleDeleteClick}
