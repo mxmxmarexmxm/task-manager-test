@@ -1,53 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import GroupsList from './components/GroupsList';
 import TasksList from './components/TasksList';
+import { useTasksData } from './hooks/useTasksData';
+import { useGroupsData } from './hooks/useGroupsData';
 import './index.css';
 
-interface Group {
-  id: string;
-  name: string;
-}
-
-interface Task {
-  id: string;
-  title: string;
-  completed: boolean;
-  description: string;
-  groupId: string;
-}
-
 const App: React.FC = () => {
-  const [groupsData, setGroupsData] = useState<Group[]>([]);
-  const [tasksData, setTasksData] = useState<Task[]>([]);
-  const [activeGroup, setActiveGroup] = useState<Group | null>(null);
   const [newTaskTitle, setNewTaskTitle] = useState<string>('');
   const [newGroupName, setNewGroupName] = useState<string>('');
   const [groupsListIsVisible, setGruopsListIsVisible] = useState<boolean>(true);
-
-  // Function to fetch groupsData from local storage
-  useEffect(() => {
-    const fetchDataFromLocalStorage = () => {
-      const localStorageData = localStorage.getItem('groups');
-      if (localStorageData) {
-        const parsedData: Group[] = JSON.parse(localStorageData);
-        setGroupsData(parsedData);
-        setActiveGroup(parsedData[0]);
-      }
-    };
-    fetchDataFromLocalStorage();
-  }, []);
-
-  // Function to fetch tasksData from local storage
-  useEffect(() => {
-    const fetchDataFromLocalStorage = () => {
-      const localStorageData = localStorage.getItem('tasks');
-      if (localStorageData) {
-        const parsedData: Task[] = JSON.parse(localStorageData);
-        setTasksData(parsedData);
-      }
-    };
-    fetchDataFromLocalStorage();
-  }, []);
+  const { groupsData, activeGroup, setActiveGroup, setGroupsData } =
+    useGroupsData();
+  const { tasksData, setTasksData } = useTasksData();
 
   return (
     <div className="bg-primary overflow-hidden h-screen text-white flex flex-col items-center justify-center">
