@@ -16,6 +16,11 @@ export const useGroupsData = () => {
       }
     };
     fetchDataFromLocalStorage();
+
+    return () => {
+      setGroupsData([]);
+      setActiveGroup(null);
+    };
   }, []);
 
   return { groupsData, activeGroup, setActiveGroup, setGroupsData };

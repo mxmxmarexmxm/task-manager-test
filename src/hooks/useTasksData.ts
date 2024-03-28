@@ -14,7 +14,11 @@ export const useTasksData = () => {
       }
     };
     fetchDataFromLocalStorage();
+    
+    return () => {
+      setTasksData([]);
+    };
   }, []);
 
-  return {tasksData, setTasksData};
+  return { tasksData, setTasksData };
 };
