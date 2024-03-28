@@ -1,10 +1,6 @@
 import Plus from '../assets/icons/Plus';
 import { generateUniqueID } from '../utils/generateUniqueID';
-
-interface Group {
-  id: string;
-  name: string;
-}
+import Group from '../types/Group';
 
 interface GroupsListProps {
   setGroupsData: React.Dispatch<React.SetStateAction<Group[]>>;

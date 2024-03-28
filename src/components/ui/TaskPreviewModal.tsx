@@ -3,14 +3,7 @@ import { useModal } from '../../context/ModalProvider';
 import Check from '../../assets/icons/Check';
 import DeleteConfirmationModalContent from './DeleteConfirmationModal';
 import Delete from '../../assets/icons/Delete';
-
-interface Task {
-  id: string;
-  title: string;
-  description: string;
-  completed: boolean;
-  groupId: string;
-}
+import Task from '../../types/Task';
 
 interface TaskPreviewModalProps {
   task: Task;
@@ -64,7 +57,7 @@ const TaskPreviewModal: React.FC<TaskPreviewModalProps> = ({
   };
 
   const handleSaveClick = () => {
-    if(taskState.title.trim().length === 0) return
+    if (taskState.title.trim().length === 0) return;
     onUpdate(taskState);
     closeModal();
   };
@@ -86,8 +79,8 @@ const TaskPreviewModal: React.FC<TaskPreviewModalProps> = ({
 
   return (
     <div
-      ref={modalRef}
       className="h-[80vh] p-6 rounded-lg  bg-secondary w-[500px] bg-red inset-0 top-0 left-0 flex flex-col"
+      ref={modalRef}
     >
       <div className="flex justify-between">
         <span className="text-accent">My List</span>
@@ -126,7 +119,9 @@ const TaskPreviewModal: React.FC<TaskPreviewModalProps> = ({
         )}
         <span className="">Description</span>
         <textarea
-          className={"flex-1 my-4 rounded-lg p-4 font-normal bg-primary resize-none outline-none"}
+          className={
+            'flex-1 my-4 rounded-lg p-4 font-normal bg-primary resize-none outline-none'
+          }
           name="description"
           value={taskState.description}
           onChange={handleInputChange}

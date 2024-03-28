@@ -3,14 +3,7 @@ import TaskItem from './TaskItem';
 import TaskPreviewModalContent from '../components/ui/TaskPreviewModal';
 import { useModal } from '../context/ModalProvider';
 import Plus from '../assets/icons/Plus';
-
-interface Task {
-  id: string;
-  title: string;
-  completed: boolean;
-  description: string;
-  groupId: string;
-}
+import Task from '../types/Task';
 
 interface TasksListProps {
   tasksData: Task[];

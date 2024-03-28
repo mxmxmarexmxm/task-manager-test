@@ -1,12 +1,5 @@
 import { useState, useEffect } from 'react';
-
-interface Task {
-  id: string;
-  title: string;
-  completed: boolean;
-  description: string;
-  groupId: string;
-}
+import Task from '../types/Task';
 
 // Custom hook to fetch tasksData from local storage
 export const useTasksData = () => {

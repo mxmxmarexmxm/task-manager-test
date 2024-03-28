@@ -1,9 +1,5 @@
 import { useState, useEffect } from 'react';
-
-interface Group {
-  id: string;
-  name: string;
-}
+import Group from '../types/Group';
 
 // Custom hook to fetch groupsData from local storage
 export const useGroupsData = () => {
