@@ -81,7 +81,7 @@ const TaskPreviewModal: React.FC<TaskPreviewModalProps> = ({
 
   return (
     <div
-      className="h-[80vh] p-6 rounded-lg  bg-secondary w-[500px] bg-red inset-0 top-0 left-0 flex flex-col"
+      className="h-[80vh] p-6 rounded-lg  bg-secondary max-w-[90vw] bg-red inset-0 top-0 left-0 flex flex-col"
       ref={modalRef}
     >
       <div className="flex justify-between">
@@ -100,7 +100,7 @@ const TaskPreviewModal: React.FC<TaskPreviewModalProps> = ({
             onClick={handleCompletedChange}
           >
             <div className="flex items-center justify-center ">
-              <Check className="h-6" />
+              <Check />
             </div>
             {taskState.completed ? 'Completed' : 'Complete'}
           </button>
