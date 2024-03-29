@@ -43,7 +43,7 @@ const GroupsList: React.FC<GroupsListProps> = ({
   };
 
   return (
-    <div className="bg-secondary min-w-[335px] max-h-[90vh] max-w-[250px] p-4 rounded-lg flex flex-col absolute md:static inset-0 justify-between z-10">
+    <div className="bg-secondary min-w-[335px] h-full sm:max-h-[90vh] max-w-[250px] p-4 rounded-lg rounded-l-none sm:rounded-lg flex flex-col absolute md:static inset-0 justify-between z-10">
       <div style={{ maxHeight: 'calc(100% - 100px)' }}>
         <h2 className="font-bold text-2xl mb-4">Groups</h2>
         <div
@@ -69,14 +69,14 @@ const GroupsList: React.FC<GroupsListProps> = ({
       </div>
       <div className="flex bg-primary rounded-lg mt-8 px-5 py-3">
         <input
-          className="italic w-12/12 bg-transparent text-white outline-none"
+          className="italic w-full bg-transparent text-white outline-none"
           type="text"
           placeholder="New group..."
           onChange={(e) => setNewGroupName(e.target.value)}
           value={newGroupName}
         />
         <button
-          className="w-6 h-6  bg-accent rounded-md flex items-center justify-center"
+          className="w-6 h-6 bg-accent rounded-md flex items-center justify-center"
           onClick={handleAddGroup}
         >
           <Plus />

@@ -35,7 +35,7 @@ export const ModalProvider = ({ children }: ModalProviderProps) => {
       {modals.map((modalContent, index) => (
         <div
           key={index}
-          className="h-screen w-full bg-primary bg-opacity-80 absolute top-0 left-0 flex justify-center items-center"
+          className="h-svh w-full bg-primary bg-opacity-80 absolute top-0 left-0 flex justify-center items-center"
         >
           <div className="flex items-center justify-center bg-secondary rounded-lg">
             {modalContent}

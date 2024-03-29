@@ -24,12 +24,12 @@ const DeleteConfirmationModal: React.FC<DeleteConfirmationModalProps> = ({
   };
 
   return (
-    <div className="flex flex-col text-center p-6 rounded-lg bg-secondary">
-      <h2 className="text-lg">Delete Confirmation</h2>
+    <div className="flex flex-col text-center p-6 rounded-lg bg-secondary z-30">
+      <h2 className="text-lg font-bold">Delete Confirmation</h2>
       <p className="my-8">Are you sure you want to delete this task?</p>
-      <div className="flex justify-center  gap-4">
+      <div className="flex justify-center gap-4">
         <button
-          className="p-2 border border-primary rounded-lg font-bold"
+          className="p-2 border-b-2 border-primary rounded-lg font-bold"
           onClick={handleCancelClick}
         >
           Cancel

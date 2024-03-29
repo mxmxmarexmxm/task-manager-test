@@ -15,12 +15,12 @@ const App: React.FC = () => {
   const { tasksData, setTasksData } = useTasksData();
 
   return (
-    <div className="bg-primary overflow-hidden h-screen text-white flex flex-col xl:px-[160px] xl:pt-[60px] w-full">
+    <div className="bg-primary overflow-hidden h-svh text-white flex flex-col xl:px-[160px] xl:pt-[60px] w-full">
       <Header
         activeGroupName={activeGroup?.name}
         setGruopsListIsVisible={setGruopsListIsVisible}
       />
-      <div className="flex relative gap-20 xl:gap-96 md:static w-full max-h-[90%] justify-start">
+      <div className="flex relative gap-20 xl:gap-96 md:static w-full max-h-[90%] min-h-[80%] justify-start">
         {groupsListIsVisible && (
           <GroupsList
             groupsData={groupsData}

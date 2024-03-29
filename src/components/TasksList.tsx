@@ -26,11 +26,9 @@ const TasksList: React.FC<TasksListProps> = ({
   groupsListIsVisible,
 }) => {
   const { openModal } = useModal();
+
   const handleAddTask = () => {
-    if (
-      newTaskTitle.trim().length === 0 ||
-      activeGroup?.name.trim().length === 0
-    ) {
+    if (newTaskTitle.trim().length === 0 || !!!activeGroup?.name.trim().length) {
       return;
     }
 
@@ -101,10 +99,12 @@ const TasksList: React.FC<TasksListProps> = ({
   };
 
   return (
-    // <div className={`${groupsListIsVisible ? 'opacity-20' : ''} mx-auto sm:opacity-100 max-h-[90vh] sm:max-h-[75vh] flex flex-col justify-end items-end sm:min-w-[400px] h-full `}>
-    <div className={`${groupsListIsVisible ? 'opacity-20' : ''} sm:opacity-100  flex flex-col justify-end items-end sm:min-w-[400px] h-full `}>
-      {/* <ul className="flex flex-col gap-3 w-full max-h-[70vh] overflow-auto"> */}
-      <ul className="flex flex-col gap-3 w-full flex-1 overflow-auto">
+    <div
+      className={`${
+        groupsListIsVisible ? 'opacity-20' : ''
+      } sm:opacity-100 flex flex-col justify-end items-end w-[95vw] sm:w-[400px] h-full mx-auto sm:m-0 `}
+    >
+      <ul className="flex flex-col gap-3 w-full flex-1 overflow-auto ">
         {tasksData &&
           tasksData
             .filter((task) => task.groupId === activeGroup?.id)
@@ -126,10 +126,10 @@ const TasksList: React.FC<TasksListProps> = ({
           placeholder="Add task..."
           value={newTaskTitle}
           onChange={(e) => setNewTaskTitle(e.target.value)}
-          className="italic bg-transparent text-white outline-none"
+          className="italic bg-transparent text-white outline-none w-[90%]"
         />
         <button
-          className={`w-6 h-6 ml-4 border-2 border-accent rounded-md flex items-center justify-center`}
+          className={`w-6 h-6 ml-4 bg-accent rounded-md flex items-center justify-center`}
           onClick={handleAddTask}
         >
           <Plus />

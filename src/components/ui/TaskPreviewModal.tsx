@@ -81,11 +81,11 @@ const TaskPreviewModal: React.FC<TaskPreviewModalProps> = ({
 
   return (
     <div
-      className="h-[80vh] p-6 rounded-lg  bg-secondary max-w-[90vw] bg-red inset-0 top-0 left-0 flex flex-col"
+      className="h-[80vh] p-6 rounded-lg  bg-secondary max-w-[90vw] w-[500px] bg-red inset-0 top-0 left-0 flex flex-col z-20"
       ref={modalRef}
     >
       <div className="flex justify-between">
-        <span className="text-accent">{activeGroupName}</span>
+        <span className="text-accent overflow-hidden whitespace-nowrap overflow-ellipsis max-w-[50%]">{activeGroupName}</span>
         <div className="flex items-center justify-center gap-3 h-6">
           <button
             onClick={handleDeleteClick}
@@ -109,7 +109,7 @@ const TaskPreviewModal: React.FC<TaskPreviewModalProps> = ({
       <div className="flex flex-col font-normal text-xs flex-1">
         <h2 className="font-bold text-2xl my-6">
           <input
-            className={`font-bold text-2xl my-6 bg-transparent border-none outline-none`}
+            className={`font-bold text-2xl my-6 bg-transparent border-none outline-none overflow-hidden whitespace-nowrap overflow-ellipsis max-w-[95%]`}
             type="text"
             name="title"
             value={taskState.title}
